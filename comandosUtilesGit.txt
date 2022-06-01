@@ -1,0 +1,25 @@
+Comandos utiles de GIT:
+
+git config --list   -> Muestra la configuracion actual de git
+
+git config --list --show-origin  -> ver donde estan guardados los archivos de configuracion
+
+--- Como no se a configurado el usurio, cuando se vaya a realizar un commit, git va a solicitar que este configurado, la configuracion se debe hacer de la siguiente manera
+git config --global user.name "Frank Diaz"
+git config --global user.email "frankd.diazr@gmail.com"
+
+git int historia.txt-> inicializa el branch en la carpeta en la que se Esta
+git add -> una vez hecho un cambio en un archiv, se usa este comando junto con el nombre del archivo para agregar estos cambios a Stagin (Aun no se ha hecho commit asi que no esta guardado todavia)
+
+git add . -> este comando adiciona todos los archivos que esten en el directorio actual, importante poner el "." 
+
+git rm --cached historia.txt -> borra un archivo que se ha adicionado a git pero no se ha dado commit, es importante darle la opcion --cached de lo contrario el archivo puede quedar en cache.
+
+git commit -m "Primer commit del archivo"
+
+
+----- Comandos para ver los cambios hechos a archivos
+
+
+git log historia.txt -> Se ve la historia general de los cambios hechos en el/los archivos, mensaje del commit, autor y fecha.
+
