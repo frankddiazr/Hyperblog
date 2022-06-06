@@ -23,3 +23,48 @@ git commit -m "Primer commit del archivo"
 
 git log historia.txt -> Se ve la historia general de los cambios hechos en el/los archivos, mensaje del commit, autor y fecha.
 
+git show historia.txt -> Muestra lo mismo de log mas las lineas que se cambiaron
+
+git diff codigoCommit1 CodigoCommit2 -> el codigo de commit se obtiene con git log nombreArchivo
+
+----- Restaurar un commit anterior
+
+git resel codigoCommit --hard -> vuelve a la version indicada y no guarda ningun cambio en stagging, si se a hecho un add se borran de stage, y borra cualquier cambio e historial de cambios hechos despues del comit indicado
+git resel codigoCommit --soft -> vuelve a la version indicada y guarda ningun cambio en stagging, si se a hecho un add se borran de stage
+
+-- Checkout
+
+git checkout codigoCommit archvo -> esto lo que hace es traer la version del a un commit determinado, en este punto en el repositorio esta la ultima version, pero  la version del archivo local cambio a el contenido que tenia el archivo en el commit indicado, asi GIT va a detectar un cambio y si desea conservar este cambio se debe agrear con "add ." y dar un nuevo commit
+
+-- git rm
+A diferencia del git reset, este comando elimina el archivo indicado pero va a mantener el historial de los cambios hechos en git, con el git reset, borra el archivo y el historial de cambios hechos a el archivo indicado.
+
+git rm rm --cached: Elimina los archivos de nuestro repositorio local y del area de staging, pero los mantiene en nuestro disco duro. Basicamente le dice a Git que deje de trackear el historial de cambios de estos archivos, por lo que pasaran a un estado untracked.
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos mas avanzados).
+
+-- git log  opciones de como funciona el comando
+git log --oneline - Te muestra el id commit y el titulo del commit.
+git log --decorate- Te muestra donde se encuentra el head point en el log.
+git log --stat - Explica el numero de lineas que se cambiaron brevemente.
+git log -p- Explica el numero de lineas que se cambiaron y te muestra que se cambio en el contenido.
+git shortlog - Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.
+git log --graph --oneline --decorate y
+git log --pretty=format:"%cn hizo un commit %h el dia %cd" - Muestra mensajes personalizados de los commits.
+git log -3 - Limitamos el numero de commits.
+git log --after="2018-1-2" ,
+git log --after="today" y
+git log --after="2018-1-2" --before="today" - Commits para localizar por fechas.
+git log --author="Name Author" - Commits realizados por autor que cumplan exactamente con el nombre.
+git log --grep="INVIE" - Busca los commits que cumplan tal cual esta escrito entre las comillas.
+git log --grep="INVIE" -i- Busca los commits que cumplan sin importar mayusculas o minusculas.
+git log - index.html- Busca los commits en un archivo en especifico.
+git log -S "Por contenido"- Buscar los commits con el contenido dentro del archivo.
+git log > log.txt - guardar los logs en un archivo txt
+
+-- Repositorios remotos
+
+git clone url_del_servidor_remoto: Nos permite descargar los archivos de la ultima version de la rama principal y todo el historial de cambios en la carpeta .git.
+git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
+git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+git merge: Tambien usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los ultimos cambios del servidor remoto y nuestro directorio de trabajo.
+git pull: Basicamente, git fetch y git merge al mismo tiempo.
