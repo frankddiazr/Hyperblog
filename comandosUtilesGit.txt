@@ -27,6 +27,7 @@ git show historia.txt -> Muestra lo mismo de log mas las lineas que se cambiaron
 
 git diff codigoCommit1 CodigoCommit2 -> el codigo de commit se obtiene con git log nombreArchivo
 
+git log --all --graph --decorate --oneline" -> permite ver los cambios hechos por linea y una forma un poco mas grafica y facil de entender
 ----- Restaurar un commit anterior
 
 git resel codigoCommit --hard -> vuelve a la version indicada y no guarda ningun cambio en stagging, si se a hecho un add se borran de stage, y borra cualquier cambio e historial de cambios hechos despues del comit indicado
@@ -110,3 +111,9 @@ ssh-add ~/.ssh/id_rsa -> donde ~ es la variable que guarda la ruta del home dond
    git remote set-url origin git@github.com:frankddiazr/Hyperblog.git -> origin es el repositorio remoto al cual se va a modificar, y el siguiente comando es lo que genero github en el paso anterior
 -- 5.2 Si no hay un repositorio creado anteriormente usar el siguiente comando
    git remote add origin git@github.com:frankddiazr/Hyperblog.git -> origin es el repositorio remoto al cual se va a modificar, y el siguiente comando es lo que genero github en el paso anteriorp
+-- 6. Para probar si todo se encuentra bien configurado, se puede realizar un Pull del origin y actualizar el repositorio local
+git pull origin main
+-- una vez hecho el cambio se procede a hacer el push a github
+git push origin master:main
+--------------------------------------------------------------------------------------------------------------------
+-- 
