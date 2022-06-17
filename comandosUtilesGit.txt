@@ -112,8 +112,29 @@ ssh-add ~/.ssh/id_rsa -> donde ~ es la variable que guarda la ruta del home dond
 -- 5.2 Si no hay un repositorio creado anteriormente usar el siguiente comando
    git remote add origin git@github.com:frankddiazr/Hyperblog.git -> origin es el repositorio remoto al cual se va a modificar, y el siguiente comando es lo que genero github en el paso anteriorp
 -- 6. Para probar si todo se encuentra bien configurado, se puede realizar un Pull del origin y actualizar el repositorio local
-git pull origin main
+git pull origin main:master
 -- una vez hecho el cambio se procede a hacer el push a github
 git push origin master:main
 --------------------------------------------------------------------------------------------------------------------
--- 
+-- Super log---
+
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+after this just execute git superlog
+------------------------------------------------------------------------
+
+git tag -a v0.1 -m "Resultado de las primeras clases del curso"
+
+
+
+---------------------------------------------------------------------------
+-- Creacion de Tags
+
+git tag -a v0.1 -m "Resultado de las primeras clases del curso" 97d3368 -> donde el ultimo campo alfanumerico es el hash del commit al cual se quiere marcar el tag
+git tag -> ver los tag que se tienen
+git show-ref --tags -> este comando permite ver a que commit hace referencia cada tag
+git push origin master:main --tags -> este comando envia los cambios de los tags a Github
+
+-- Eliminacion de tags
+git tag -d show -> donde "show" es el nombre del tag que se quiere borrar
+git push origin master:main :refs/tags/show -> Comando para mandar el borrado del tag a github
