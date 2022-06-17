@@ -141,5 +141,6 @@ git push origin master:main :refs/tags/show -> Comando para mandar el borrado de
 
 -------------------------------------------------------------------------
 -- Manejo de Branches(ramas) en Github
-
-ya esta creada la rama cabecera
+-- git branch cabecera
+ya esta creada la rama cabecera, se procede a realizar el checkout de la misma
+ git checkout cabecera 
