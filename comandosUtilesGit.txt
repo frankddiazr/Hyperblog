@@ -30,8 +30,8 @@ git diff codigoCommit1 CodigoCommit2 -> el codigo de commit se obtiene con git l
 git log --all --graph --decorate --oneline" -> permite ver los cambios hechos por linea y una forma un poco mas grafica y facil de entender
 ----- Restaurar un commit anterior
 
-git resel codigoCommit --hard -> vuelve a la version indicada y no guarda ningun cambio en stagging, si se a hecho un add se borran de stage, y borra cualquier cambio e historial de cambios hechos despues del comit indicado
-git resel codigoCommit --soft -> vuelve a la version indicada y guarda ningun cambio en stagging, si se a hecho un add se borran de stage
+git reset codigoCommit --hard -> vuelve a la version indicada y no guarda ningun cambio en stagging, si se a hecho un add se borran de stage, y borra cualquier cambio e historial de cambios hechos despues del comit indicado
+git reset codigoCommit --soft -> vuelve a la version indicada y guarda ningun cambio en stagging, si se a hecho un add se borran de stage
 
 -- Checkout
 
@@ -138,3 +138,8 @@ git push origin master:main --tags -> este comando envia los cambios de los tags
 -- Eliminacion de tags
 git tag -d show -> donde "show" es el nombre del tag que se quiere borrar
 git push origin master:main :refs/tags/show -> Comando para mandar el borrado del tag a github
+
+-------------------------------------------------------------------------
+-- Manejo de Branches(ramas) en Github
+
+ya esta creada la rama cabecera
